@@ -1,0 +1,60 @@
+[
+  {
+    "name": "edge",
+    "amount": 300.0,
+    "ledger": [
+      {
+        "from": "edge",
+        "to": "ze",
+        "amount": 10.0
+      },
+      {
+        "from": "edge",
+        "to": "ze",
+        "amount": 20.0
+      },
+      {
+        "from": "edge",
+        "to": "ze",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "ze",
+    "amount": 250.0,
+    "ledger": [
+      {
+        "from": "edge",
+        "to": "ze",
+        "amount": 10.0
+      },
+      {
+        "from": "edge",
+        "to": "ze",
+        "amount": 20.0
+      },
+      {
+        "from": "claudio",
+        "to": "ze",
+        "amount": 200.0
+      },
+      {
+        "from": "edge",
+        "to": "ze",
+        "amount": 20.0
+      }
+    ]
+  },
+  {
+    "name": "claudio",
+    "amount": 1000.0,
+    "ledger": [
+      {
+        "from": "claudio",
+        "to": "ze",
+        "amount": 200.0
+      }
+    ]
+  }
+]
