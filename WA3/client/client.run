@@ -1,0 +1,9 @@
+#!/bin/bash
+
+FILE=$(ls target/ | grep -i 'client.*.jar$')
+if [ -z "$FILE" ]
+then
+    mvn clean package
+fi
+
+java -jar target/client-1.2.jar

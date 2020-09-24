@@ -1,0 +1,42 @@
+#!/bin/bash
+
+function compile() {
+
+    local FILE=$(ls target/ | grep -i 'server.*.jar$')
+
+    if [ -z "$FILE" ]
+    then
+        mvn clean package
+    fi
+}
+
+function run_spring() {
+
+    local PROFILE="r1"
+    case $1 in
+        1) 
+            PROFILE="r1"
+        ;;
+        2) 
+            PROFILE="r2"
+        ;;
+        3)
+            PROFILE="r3"
+        ;;
+        4)
+            PROFILE="r4"
+        ;;
+    esac
+    java -jar -Dspring.profiles.active=$PROFILE target/server-1.2.jar
+
+}
+
+
+if [ -z "$1" ]
+then
+    echo "usage server.run num-of-replica"
+    echo "example: server.run 1"
+else
+    compile
+    run_spring $1
+fi    

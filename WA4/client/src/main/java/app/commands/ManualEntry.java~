@@ -1,0 +1,9 @@
+package app.commands;
+
+public interface ManualEntry {
+
+    static final String COMMAND = null;
+    static final String USAGE = null;
+    static final String DESCRIPTION = null;
+    static final String OPT_DESCRIPTION = null;
+}

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+PORTS=(6381 6382 6383 6384)
+NAMES=(redis-1 redis-2 redis-3 redis-4)
+
+function clean() {
+    
+    for i in {1..4}
+    do
+        docker kill "${NAMES[($i-1)]}"
+        docker rm "${NAMES[$i-1]}"
+    done
+
+}
+
+if [ "$1" = "-k" ];
+then
+    clean
+elif [ -z "$1"];
+then
+    for i in {1..4}
+    do
+        docker run -d --name "${NAMES[($i-1)]}" -p "${PORTS[($i-1)]}":6379 redis
+    done
+else
+    echo "Usage: ./redis.run [-k]"
+fi
+
